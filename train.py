@@ -3,7 +3,7 @@
 from math import log2
 
 import torch
-import torch.optim as optim
+import torch.optim as optim 
 import torchvision.datasets as datasets
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
@@ -11,7 +11,7 @@ from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 
 import config
-from model import Discriminator, Generator
+from model import Discriminator, Generator                       
 from utils import (
     gradient_penalty,
     plot_to_tensorboard,
@@ -41,8 +41,8 @@ def get_loader(image_size):
     return loader, dataset
 
 def get_loader_CIFAR(image_size):
-    transform = transforms.Compose([                                                                                   
-            transforms.Resize((image_size, image_size)),
+    transform = transforms.Compose([     
+            transforms.Resize((image_size, image_size)),                                                                              
             transforms.ToTensor(),
             transforms.Normalize([0.5 for _ in range(config.CHANNELS_IMG)], [0.5 for _ in range(config.CHANNELS_IMG)],),]
     )
@@ -123,7 +123,7 @@ def main():
     scaler_gen = torch.cuda.amp.GradScaler()
 
     # for tensorboard plotting
-    writer = SummaryWriter(f"logs/gan1")
+    writer = SummaryWriter(f"logs/ganCIFAR")
 
     if config.LOAD_MODEL:
         load_checkpoint(config.CHECKPOINT_GEN, gen, opt_gen, config.LEARNING_RATE,)
@@ -137,7 +137,7 @@ def main():
     step = int(log2(config.START_TRAIN_AT_IMG_SIZE / 4))
     for num_epochs in config.PROGRESSIVE_EPOCHS[step:]:
         alpha = 1e-5  # start with very low alpha
-        loader, dataset = get_loader(4 * 2 ** step)  # 4->0, 8->1, 16->2, 32->3, 64 -> 4
+        loader, dataset = get_loader_CIFAR(4 * 2 ** step)  # 4->0, 8->1, 16->2, 32->3, 64 -> 4
         print(f"Current image size: {4 * 2 ** step}")
 
         for epoch in range(num_epochs):
@@ -154,3 +154,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+#%%
