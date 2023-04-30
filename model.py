@@ -3,6 +3,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from math import log2
 
+import matplotlib.pyplot as plt
+
 factors = [1, 1, 1, 1, 1 / 2, 1 / 4, 1 / 8, 1 / 16, 1 / 32]
 
 
@@ -167,7 +169,6 @@ class Discriminator(nn.Module):
         out = self.minibatch_std(out)
         return self.final_block(out).view(out.shape[0], -1)
 
-
 if __name__ == "__main__":
     Z_DIM = 100
     IN_CHANNELS = 256
@@ -178,7 +179,9 @@ if __name__ == "__main__":
         num_steps = int(log2(img_size / 4))
         x = torch.randn((1, Z_DIM, 1, 1))
         z = gen(x, 0.5, steps=num_steps)
+        print(z.detach().numpy().shape)
         assert z.shape == (1, 3, img_size, img_size)
+        plt.imshow(z.reshape(3,img_size,img_size))
         out = critic(z, alpha=0.5, steps=num_steps)
         assert out.shape == (1, 1)
         print(f"Success! At img size: {img_size}")
