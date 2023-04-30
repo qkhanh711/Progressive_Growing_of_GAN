@@ -40,6 +40,24 @@ def get_loader(image_size):
     )
     return loader, dataset
 
+def get_loader_CIFAR(image_size):
+    transform = transforms.Compose([                                                                                   
+            transforms.Resize((image_size, image_size)),
+            transforms.ToTensor(),
+            transforms.Normalize([0.5 for _ in range(config.CHANNELS_IMG)], [0.5 for _ in range(config.CHANNELS_IMG)],),]
+    )
+    batch_size = config.BATCH_SIZES[int(log2(image_size / 4))]
+    dataset = datasets.CIFAR10(root='../data', train=True,
+                                        download=True, transform=transform)
+    loader = DataLoader(
+        dataset,
+        batch_size=batch_size,
+        shuffle=True,
+        num_workers=config.NUM_WORKERS,
+        pin_memory=True,
+    )
+    return loader, dataset
+
 
 def train_fn(critic,gen,loader,dataset,step,alpha,opt_critic,opt_gen,tensorboard_step,writer,scaler_gen,scaler_critic,):
     loop = tqdm(loader, leave=True)
