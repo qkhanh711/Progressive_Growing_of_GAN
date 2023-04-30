@@ -47,7 +47,7 @@ def get_loader_CIFAR(image_size):
             transforms.Normalize([0.5 for _ in range(config.CHANNELS_IMG)], [0.5 for _ in range(config.CHANNELS_IMG)],),]
     )
     batch_size = config.BATCH_SIZES[int(log2(image_size / 4))]
-    dataset = datasets.CIFAR10(root='../data', train=True,
+    dataset = datasets.CIFAR10(root='./data', train=True,
                                         download=True, transform=transform)
     loader = DataLoader(
         dataset,

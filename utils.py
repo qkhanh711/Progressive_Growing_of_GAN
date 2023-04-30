@@ -57,7 +57,7 @@ def save_checkpoint(model, optimizer, filename="my_checkpoint.pth.tar"):
 
 def load_checkpoint(checkpoint_file, model, optimizer, lr):
     print("=> Loading checkpoint")
-    checkpoint = torch.load(checkpoint_file, map_location="cuda")
+    checkpoint = torch.load(checkpoint_file, map_location="cpu")
     model.load_state_dict(checkpoint["state_dict"])
     optimizer.load_state_dict(checkpoint["optimizer"])
 
@@ -90,5 +90,5 @@ def generate_examples(gen, steps, truncation=0.7, n=100):
             noise = torch.tensor(truncnorm.rvs(-truncation, truncation, size=(1, config.Z_DIM, 1, 1)),
                                  device=config.DEVICE, dtype=torch.float32)
             img = gen(noise, alpha, steps)
-            save_image(img * 0.5 + 0.5, f"saved_examples/img_{i}.png")
+            save_image(img * 0.5 + 0.5, f"..\saved_examples\img_{i}.png")
     gen.train()
