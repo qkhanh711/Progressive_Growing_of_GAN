@@ -33,11 +33,11 @@ Tổ chức file code theo dạng:
 
         LastTerm/
             Celeba_dataset/
+            logs/
             Progressive_Growing_of_GAN
                 fakeCeleba/
                 fakeCIFAR/
                 Image/
-                logs/
                 ProgressiveGAN/
                     config.py
                     Evaluate.ipynb
