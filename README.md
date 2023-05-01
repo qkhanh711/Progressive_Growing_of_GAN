@@ -76,6 +76,8 @@ Tổ chức file code theo dạng:
         loader, dataset = get_loader_CIFAR(4 * 2 ** step)
         với CIFAR10 dataset
 
+![](Image/Colab1.png)
+
 **Bước 4** Chọn Runtime -> Run All
 
 
