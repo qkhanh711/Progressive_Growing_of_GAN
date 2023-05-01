@@ -68,7 +68,7 @@ Tổ chức file code theo dạng:
 
 **Bước 2:** Kết nối và tải file archive.zip (Celeba dataset) lên google drive
 
-**Bước 3** Mở file train.py -> Dòng 138  thay đổi thành:
+**Bước 3** Mở file train.py -> Dòng 138 (Phần bôi đen) thay đổi thành:
 
         loader, dataset = get_loader(4 * 2 ** step, root_path = config.PATH_COLAB)
         với Celebadataset
@@ -76,7 +76,8 @@ Tổ chức file code theo dạng:
         loader, dataset = get_loader_CIFAR(4 * 2 ** step)
         với CIFAR10 dataset
 
-![](Image/Colab1.png)
+![](Image/Colab2.png)
+
 
 **Bước 4** Chọn Runtime -> Run All
 
