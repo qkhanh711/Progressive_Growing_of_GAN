@@ -60,6 +60,8 @@ Tổ chức file code theo dạng:
 
 ![](Image/train.png)
 
+## Đánh giá mô hình trên file Evaluate.ipynb
+
 ## Chạy code trên google colab
 
 **Bước 1:** Mở google Colab bằng link sau
