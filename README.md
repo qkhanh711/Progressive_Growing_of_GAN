@@ -1,11 +1,8 @@
-# Progressive_Growing_of_GAN
+# 📚 Trường đại học Phenikaa
 dataset: https://drive.google.com/file/d/19KQ1GAnjKcm1eYYsR2M0OxU_vkCvIk6w/view?usp=sharing
 
-
-# 📚 OOP project -Java
-
-Source Code Bài tâp lớn OOP về quản lí thư viện trường đại học Phenikaa
-
+### Source Code Bài tập lớn cuối kỳ môn Deep Learning
+### Đề tài: sinh ảnh bằng Progressive Growing of GAN
 ## Sử dụng: 
 
          - Java swing (Graphical User Interface) -> tạo giao diện người dùng 

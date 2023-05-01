@@ -13,6 +13,8 @@ from torch.nn import functional as F
 import torch.utils.data
 from torchvision.models.inception import inception_v3
 
+import matplotlib.pyplot as plt
+
 # Print losses occasionally and print to tensorboard
 def plot_to_tensorboard(
         writer, loss_critic, loss_gen, real, fake, tensorboard_step
@@ -143,3 +145,13 @@ def inception_score(imgs, cuda=True, batch_size=32, resize=False, splits=1):
         split_scores.append(np.exp(np.mean(scores)))
 
     return np.mean(split_scores), np.std(split_scores)
+
+def imshow(img):
+    img = img / 2 + 0.5     # unnormalize
+    npimg = img.numpy()
+    plt.imshow(np.transpose(npimg, (1, 2, 0)))
+    plt.show()
+
+# FID = ||mu1 - mu2||^2 + Tr(C1 + C2 - 2(C1*C2)^(1/2))
+def fid_score(mur, muf, stdr, stdf):
+    return np.sqrt(muf**2 + mur**2) + (stdf + stdr - 2 * np.sqrt(stdf * stdr))
