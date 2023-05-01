@@ -4,8 +4,9 @@ from math import log2
 
 START_TRAIN_AT_IMG_SIZE = 4
 DATASET = '../../Celeba_dataset/img_align_celeba'
-CHECKPOINT_GEN = "weightTest\generator.pth"
-CHECKPOINT_CRITIC = "weightTest\critic.pth"
+PATH_COLAB = '/content/Celeba_dataset/img_align_celeba'
+CHECKPOINT_GEN = "weightTest/generator.pth"
+CHECKPOINT_CRITIC = "weightTest/critic.pth"
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 SAVE_MODEL = True
 LOAD_MODEL = False

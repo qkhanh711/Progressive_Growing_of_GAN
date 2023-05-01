@@ -46,7 +46,7 @@ def get_loader_CIFAR(image_size):
             transforms.Normalize([0.5 for _ in range(config.CHANNELS_IMG)], [0.5 for _ in range(config.CHANNELS_IMG)],),]
     )
     batch_size = config.BATCH_SIZES[int(log2(image_size / 4))]
-    dataset = datasets.CIFAR10(root='../../data', train=True,
+    dataset = datasets.CIFAR10(root='data', train=True,
                                         download=True, transform=transform)
     loader = DataLoader(
         dataset,
@@ -120,7 +120,7 @@ def main():
     scaler_gen = torch.cuda.amp.GradScaler()
 
     # for tensorboard plotting
-    writer = SummaryWriter(f"logs/ganCIFAR")
+    writer = SummaryWriter(f"logs\ganTest")
 
     if config.LOAD_MODEL:
         load_checkpoint(config.CHECKPOINT_GEN, gen, opt_gen, config.LEARNING_RATE,)
