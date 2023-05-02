@@ -99,7 +99,7 @@ def generate_examples(gen, steps, root_path, truncation=0.7, n=100):
             save_image(img * 0.5 + 0.5, f"../{root_path}/saved_examples/img_{i}.png")
     gen.train()
 
-def inception_score(imgs, cuda=True, batch_size=32, resize=False, splits=1):
+def get_inception_score(imgs, cuda=True, batch_size=32, resize=False, splits=1):
     N = len(imgs)
     # Set up dtype
     if cuda:
@@ -155,3 +155,15 @@ def imshow(img):
 # FID = ||mu1 - mu2||^2 + Tr(C1 + C2 - 2(C1*C2)^(1/2))
 def fid_score(mur, muf, stdr, stdf):
     return np.sqrt(muf**2 + mur**2) + (stdf + stdr - 2 * np.sqrt(stdf * stdr))
+
+def kl_divergence(mean1, mean2, std1, std2):
+
+    kl = np.log(std2/std1) + (std1**2 + (mean1 - mean2)**2) / (2 * std2**2) - 0.5
+    return kl.sum()
+
+def inception_score(real_imgs, fake_imgs, batch_size=32):
+    real_scores, real_std = get_inception_score(real_imgs, batch_size=batch_size)
+    fake_scores, fake_std = get_inception_score(fake_imgs, batch_size=batch_size)
+    kl = kl_divergence(real_scores, real_std, fake_scores, fake_std)
+    is_score = np.exp(kl)
+    return is_score
