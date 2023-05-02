@@ -120,7 +120,7 @@ def main():
     scaler_gen = torch.cuda.amp.GradScaler()
 
     # for tensorboard plotting
-    writer = SummaryWriter(f"logs\ganTest")
+    writer = SummaryWriter(f"logs/ganTest")
 
     if config.LOAD_MODEL:
         load_checkpoint(config.CHECKPOINT_GEN, gen, opt_gen, config.LEARNING_RATE,)
