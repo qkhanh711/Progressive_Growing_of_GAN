@@ -82,9 +82,6 @@ Tổ chức file code theo dạng:
         loader, dataset = get_loader(4 * 2 ** step, root_path = config.PATH_COLAB)
         với Celebadataset
 
-        loader, dataset = get_loader_CIFAR(4 * 2 ** step)
-        với CIFAR10 dataset
-
 ![](Image/Colab2.png)
 
 
