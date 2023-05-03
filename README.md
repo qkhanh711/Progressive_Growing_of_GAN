@@ -4,6 +4,10 @@
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
+<a target="_blank" href="https://www.overleaf.com/read/ghtkyhzzcgxg">
+  <img src="https://www.svgrepo.com/show/13671/youtube.svg" width="20" alt="Report Latex"/>
+</a>
+
 ### Source Code Bài tập lớn cuối kỳ môn Deep Learning
 ### Đề tài: mô hình sinh ảnh Progressive Growing of GAN trên tập dữ liệu CIFAR10 và CELEBA 
 
