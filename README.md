@@ -22,7 +22,7 @@
                                       |     21011495     |   21011492    |  
                                       |     K15-KHMT     |   K15-KHMT    |
 
-## Hướng dẫn chạy code:
+## Hướng dẫn chạy code trên máy cá nhân:
 
 Clone code từ git
 
