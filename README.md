@@ -18,9 +18,9 @@
 
 ## Nhóm 8: 
 
-                              | Nguyễn Quốc Khánh| Đỗ Trọng Hiệp |
-                              |     21011495     |   21011492    |  
-                              |     K15-KHMT     |   K15-KHMT    |
+                                      | Nguyễn Quốc Khánh| Đỗ Trọng Hiệp |
+                                      |     21011495     |   21011492    |  
+                                      |     K15-KHMT     |   K15-KHMT    |
 
 ## Hướng dẫn chạy code:
 
