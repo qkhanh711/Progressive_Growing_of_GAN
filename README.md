@@ -65,7 +65,7 @@ Tổ chức file code theo dạng:
 
 ## Đánh giá mô hình trên file Evaluate.ipynb
 
-## Chạy code trên google colab
+## Chạy code trên google colab trên Celeba dataset
 
 **Bước 1:** Mở google Colab bằng link sau
 
