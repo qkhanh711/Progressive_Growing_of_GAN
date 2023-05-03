@@ -1,5 +1,8 @@
 # 📚 Trường đại học Phenikaa
 
+<a target="_blank" href="https://colab.research.google.com/drive/1ViZz99EZOxQKe6cGr9OKH4J4TpN4JYX0#scrollTo=K8RsXNYeCdg4">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
 ### Source Code Bài tập lớn cuối kỳ môn Deep Learning
 ### Đề tài: mô hình sinh ảnh Progressive Growing of GAN trên tập dữ liệu CIFAR10 và CELEBA 
