@@ -80,7 +80,6 @@ Tổ chức file code theo dạng:
 **Bước 3** Mở file train.py -> Dòng 138 (Phần bôi đen) thay đổi thành:
 
         loader, dataset = get_loader(4 * 2 ** step, root_path = config.PATH_COLAB)
-        với Celebadataset
 
 ![](Image/Colab2.png)
 
