@@ -30,7 +30,7 @@ Clone code từ git
 
 Tải xuống CelebA dataset theo link:
 
-        https://drive.google.com/file/d/19KQ1GAnjKcm1eYYsR2M0OxU_vkCvIk6w/view?usp=sharing
+        https://drive.google.com/file/d/1zptgH6nwHJgdBPD34PLewYr2ONyRe9g7/view?usp=share_link
 
 Tải xuống file lưu weight từ mô hình sau khi train 2 bộ datasets CIFAR10 và CelebA:
 
