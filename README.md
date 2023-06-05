@@ -34,7 +34,7 @@ Tải xuống CelebA dataset theo link:
 
 Tải xuống file lưu weight từ mô hình sau khi train 2 bộ datasets CIFAR10 và CelebA:
 
-        https://drive.google.com/drive/folders/1eVIIyY_I6ndSBvD3Gkagm-BojRn99lC1?usp=share_link
+        [https://drive.google.com/drive/folders/1eVIIyY_I6ndSBvD3Gkagm-BojRn99lC1?usp=share_link](https://drive.google.com/file/d/1Tmp6SrAaB7YP8cNg0wDM1JQ7ENOVnyDi/view?usp=sharing)
 
 Tổ chức file code theo dạng:
 
