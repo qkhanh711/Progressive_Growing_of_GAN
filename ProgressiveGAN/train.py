@@ -39,14 +39,14 @@ def get_loader(image_size, root_path):
     )
     return loader, dataset
 
-def get_loader_CIFAR(image_size):
+def get_loader_CIFAR(image_size, root_path):
     transform = transforms.Compose([     
             transforms.Resize((image_size, image_size)),                                                                              
             transforms.ToTensor(),
             transforms.Normalize([0.5 for _ in range(config.CHANNELS_IMG)], [0.5 for _ in range(config.CHANNELS_IMG)],),]
     )
     batch_size = config.BATCH_SIZES[int(log2(image_size / 4))]
-    dataset = datasets.CIFAR10(root='data', train=True,
+    dataset = datasets.CIFAR10(root= root_path, train=True,
                                         download=True, transform=transform)
     loader = DataLoader(
         dataset,
